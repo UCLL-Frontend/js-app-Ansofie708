@@ -1,5 +1,34 @@
 header{
     background-color: #bc1919;
     text-align: center;
-    color: white;
+    color: whitesmoke;
+}
+
+nav ul {
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+  
+}
+
+nav ul li {
+    background-color: #bc1919;
+    padding: 1em;
+    border-radius: var(--afronding);
+    transition: backgroundColor 0.5 ease-in-out;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--headerkleur);
+    font-weight: bold;
+    display: block;
+}
+
+ nav ul li a:hover {
+   background-color: #fb6051;
+   color: var (--headerkleur);
+
 }
