@@ -1,3 +1,12 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 header{
     background-color: #bc1919;
     text-align: center;
@@ -31,4 +40,15 @@ nav ul li a {
    background-color: #fb6051;
    color: var (--headerkleur);
 
+}
+
+
+footer{
+    background-color: #bc1919;
+
+}
+
+footer p {
+    text-align: center;
+    color: whitesmoke;
 }
