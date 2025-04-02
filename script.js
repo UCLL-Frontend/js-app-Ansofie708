@@ -1,6 +1,21 @@
 /* H1 aanpassen */
 document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
 
+/* array voor Taken*/
+const taken = [
+    { titel: 'Boodschappen doen' },
+    { titel: 'Sporten' },
+    { titel: 'Lezen' },
+    { titel: 'Tuinieren' },
+    { titel: 'Auto wassen' }
+];
+
+/* Taken toevoegen */
+taken.forEach(taak => {
+    voegTaakObjectToe(taak);
+});
+
+
 /*eerste taak toevoegen*/
 const taakTitel1 = 'Boodschappen doen';
 const taakElement1= document.createElement('article');
