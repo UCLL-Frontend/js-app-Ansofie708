@@ -77,9 +77,6 @@ document.querySelector('section.Taken').appendChild(taakArtikel);
 }
 
 
-    
-
-
 
 /* Functie om taak te bewerken */
 function bewerkTaak(taakElement, taak) {
