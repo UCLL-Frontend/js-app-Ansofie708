@@ -56,3 +56,13 @@ function bewerkTaak(taakElement, taak) {
     }
 }
 
+/* Event listener om taken te verwijderen*/
+const VerwijderAlleTakenKnop = document.createElement('button');
+VerwijderAlleTakenKnop.innerText = 'Verwijder alle taken';
+document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
+
+VerwijderAlleTakenKnop.addEventListener ('click', function() {
+    const takenElementen = document.querySelectorAll('section.Taken article.taak');
+    takenElementen.forEach(taakElement => taakElement.remove());
+
+}) 
