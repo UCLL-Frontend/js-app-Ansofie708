@@ -28,5 +28,16 @@ function voegTaakToe(taak) {
 
 }
 
+const taakObjectLezen = {
+    titel: 'Lezen'
+};
 
+/*toevoegen taakobject*/
+function voegTaakObjectToe(taak) {
+    const taakArtikel = document.createElement ('article');
+    taakArtikel.innerHTML = `<h2>${taak.titel}</h2>`;
+    taakArtikel.classList.add('taak');
+    document.querySelector('section.Taken').appendChild(taakArtikel);
+}
 
+voegTaakObjectToe(taakObjectLezen);
