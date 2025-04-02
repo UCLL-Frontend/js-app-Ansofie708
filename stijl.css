@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
@@ -24,9 +25,7 @@ nav ul {
 
 nav ul li {
     background-color: #bc1919;
-    padding: 1em;
-    border-radius: var(--afronding);
-    transition: backgroundColor 0.5 ease-in-out;
+    
 }
 
 nav ul li a {
@@ -34,6 +33,9 @@ nav ul li a {
     color: var(--headerkleur);
     font-weight: bold;
     display: block;
+    padding: 1em;
+    border-radius: 8px;
+    transition: backgroundColor 0.5 ease-in-out;
 }
 
  nav ul li a:hover {
@@ -43,6 +45,7 @@ nav ul li a {
 }
 
 .taak {
+    color: whitesmoke;
     background-color: #fb6051 ;
     padding: 1em;
     border-radius: 8px;
