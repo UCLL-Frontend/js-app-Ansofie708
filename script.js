@@ -89,3 +89,15 @@ function bewerkTaak(taakElement, taak) {
 }
 
 
+/*nieuwe taak toevoegen*/
+const taakobjectTuinieren = {
+    titel: 'Tuinieren'
+};
+
+voegTaakObjectToe(taakobjectTuinieren);
+
+
+const taakobjectAutoWassen ={
+    titel: 'Auto wassen'
+}
+voegTaakObjectToe(taakobjectAutoWassen);
