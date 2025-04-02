@@ -42,6 +42,14 @@ nav ul li a {
 
 }
 
+.taak {
+    background-color: #fb6051 ;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1em;
+}
+
 
 footer{
     background-color: #bc1919;

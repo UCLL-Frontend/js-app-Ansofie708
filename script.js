@@ -12,6 +12,7 @@ document.querySelector('section.Taken').appendChild(taakElement1);
 const taakTitel2 = 'Sporten';
 const taakElement2 = document.createElement ('article');
 taakElement2.innerHTML = `<h2>${taakTitel2}</h2>`;
+taakElement2.classList.add('taak');
 document.querySelector('section.Taken').appendChild(taakElement2);
 
 
