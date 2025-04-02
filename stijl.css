@@ -14,6 +14,7 @@ header{
     color: whitesmoke;
 }
 
+
 nav ul {
     display: flex;
     gap: 1em;
@@ -40,8 +41,31 @@ nav ul li a {
 
  nav ul li a:hover {
    background-color: #fb6051;
-   color: var (--headerkleur);
+   color: var(--headerkleur);
 
+}
+
+label{
+     display: block;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+
+   
+
+}
+
+textarea{
+    width: 60%;
+    padding: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+
+    
 }
 
 .taak {
@@ -56,13 +80,13 @@ nav ul li a {
 }
 
 button{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    background-color: whitesmoke;
-    border: none;
-    cursor: pointer;
-    position: absolute;
+cursor: pointer;
+padding: 0.5em;
+border-radius: 8px;
+background-color: whitesmoke;
+margin-top: 5px;
+font-weight: bold;
+
     
 }
 
@@ -72,9 +96,21 @@ button i{
 }
 
 
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
 footer{
     background-color: #bc1919;
-
+    padding: 1em;
+    margin-top: auto;
+  
+   
+    
 }
 
 footer p {
