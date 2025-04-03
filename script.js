@@ -34,7 +34,18 @@ function updateAantalTaken() {
 }
 
 
+/* taak toevoegen*/
+document.getElementById('addTaskButton').addEventListener('click', function() {
+    const taakInput = document.getElementById('taakInput').value.trim();
 
+    if (taakInput !== '') {
+        const nieuweTaak = { titel: taakInput };
+        taken.push(nieuweTaak);
+        voegTaakObjectToe(nieuweTaak);
+        document.getElementById('taakInput').value = '';  
+        updateAantalTaken();
+    }
+});
 
 
 /*toevoegen taakobject*/
@@ -42,8 +53,6 @@ function voegTaakObjectToe(taak) {
     const taakArtikel = document.createElement ('article');
     taakArtikel.innerHTML = `<h2>${taak.titel}</h2>`;
     taakArtikel.classList.add('taak');
-
-
 
 
 /*verwijder knop per taak*/
@@ -98,30 +107,6 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
 
 });
 
-
-/*Nieuwe taak toevoegen met fat arrow*/
-const voegNieuweTaakToe = (titel) => {
-    const nieuweTaak = { titel: titel};
-    taken.push(nieuweTaak);
-    voegTaakObjectToe(nieuweTaak);
-    updateAantalTaken();
-};
-
-/*inputveld*/
-const nieuweTaakInput = document.createElement('input');
-nieuweTaakInput.type = 'text';
-nieuweTaakInput.placeholder = 'Nieuwe taak toevoegen';
-document.querySelector('section.Taken').before(nieuweTaakInput);
-
-/*eventlistener voor nieuwe taak*/
-nieuweTaakInput.addEventListener('keydown',(event) => {
-   if (event.code === 'Enter' && nieuweTaakInput.value.trim() !== '') {
-    voegNieuweTaakToe(nieuweTaakInput.value.trim());
-    nieuweTaakInput.value = '';
-
-   } 
-});
-nieuweTaakInput.classList.add('nieuwe-taak-input');
 
 
 
