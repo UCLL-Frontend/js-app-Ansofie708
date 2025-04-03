@@ -23,8 +23,19 @@ taken.forEach(taak => {
 });
 
 
+
 /*verwijderen van 'geenTaken*/
 document.getElementById('geenTaken').remove();
+
+
+/* Functie om het aantal taken bij te werken */
+function updateAantalTaken() {
+    const aantalTaken = taken.length;  
+    document.getElementById('aantalTaken').innerText = `Totaal aantal taken: ${aantalTaken}`;
+}
+
+
+
 
 
 /*toevoegen taakobject*/
@@ -32,6 +43,8 @@ function voegTaakObjectToe(taak) {
     const taakArtikel = document.createElement ('article');
     taakArtikel.innerHTML = `<h2>${taak.titel}</h2>`;
     taakArtikel.classList.add('taak');
+
+
 
 
 /*verwijder knop per taak*/
@@ -70,7 +83,6 @@ function bewerkTaak(taakElement, taak) {
         taakElement.querySelector('h2').innerText = taak.titel;
     }
 }
-
 
 
 
@@ -119,3 +131,6 @@ function verwijderTaak(taakElement, taak) {
         taakElement.remove();
     }
 }
+
+
+document.querySelector('#aantalTaken').innerText += taken.length;

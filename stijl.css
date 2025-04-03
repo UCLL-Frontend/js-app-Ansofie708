@@ -105,6 +105,12 @@ textarea{
    
 }
 
+ul.statistieken {
+    list-style-type: none;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+
 button{
 cursor: pointer;
 padding: 0.5em;
