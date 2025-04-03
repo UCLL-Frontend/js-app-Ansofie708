@@ -16,6 +16,8 @@ const taken = [
     {titel: 'E-mail beantwoorden'}
 ];
 
+
+
 /* Taken toevoegen */
 taken.forEach(taak => {
     voegTaakObjectToe(taak);
