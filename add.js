@@ -8,8 +8,7 @@ document.getElementById('addTaskButton').addEventListener('click', function () {
         const nieuweTaak = { titel: taakInput };
         taken.push(nieuweTaak);
         localStorage.setItem('taken', JSON.stringify(taken)); 
-        voegTaakObjectToe(nieuweTaak);
-        document.getElementById('taakInput').value = ''; 
+         document.getElementById('taakInput').value = ''; 
     }
 });
 

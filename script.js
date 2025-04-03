@@ -13,6 +13,7 @@ const standaardTaken = [
 
 
 let taken = JSON.parse(localStorage.getItem('taken')) || []; 
+localStorage.setItem('taken', JSON.stringify(taken));
 
 if (taken.length === 0) {
     taken = [...standaardTaken];
