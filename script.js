@@ -94,6 +94,8 @@ document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
 VerwijderAlleTakenKnop.addEventListener ('click', function() {
     const takenElementen = document.querySelectorAll('section.Taken article.taak');
     takenElementen.forEach(taakElement => taakElement.remove());
+    taken.length = 0;
+    updateAantalTaken();
 
 });
 
@@ -116,6 +118,7 @@ nieuweTaakInput.addEventListener('keydown',(event) => {
    if (event.code === 'Enter' && nieuweTaakInput.value.trim() !== '') {
     voegNieuweTaakToe(nieuweTaakInput.value.trim());
     nieuweTaakInput.value = '';
+    updateAantalTaken();
    } 
 });
 nieuweTaakInput.classList.add('nieuwe-taak-input');
