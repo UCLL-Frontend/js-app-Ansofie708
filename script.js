@@ -44,7 +44,16 @@ document.querySelector('section.Taken').appendChild(taakArtikel);
 
 }
 
+/*verwijder knop*/
+const deleteButton = DocumentTimeline.createElement('button');
+deleteButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
+taak.Artikel.appendChild(deleteButton);
 
+deleteButton.addEventListener('click', function () {
+    verwijderTaak(taakArtikel,taak);
+});
+
+document.querySelector('section.Taken').appendChild(taakArtikel);
 
 /* Functie om taak te bewerken */
 function bewerkTaak(taakElement, taak) {
@@ -54,6 +63,17 @@ function bewerkTaak(taakElement, taak) {
         taak.titel = nieuweTitel.trim();
         taakElement.querySelector('h2').innerText = taak.titel;
     }
+}
+
+
+/*verwijderen van taak*/
+
+function verwijderTaak(taakElement, taak) {
+    const index = taken.findIndex (t => t.titel === taak.titel);
+    if (index > -1) {
+        taken.splice(index,1);
+        taak.Element.remove();
+    } 
 }
 
 /* Event listener om taken te verwijderen*/
@@ -87,3 +107,4 @@ nieuweTaakInput.addEventListener('keydown',(event) => {
     nieuweTaakInput.value = '';
    } 
 });
+
