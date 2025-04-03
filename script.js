@@ -100,6 +100,7 @@ nieuweTaakInput.addEventListener('keydown',(event) => {
     nieuweTaakInput.value = '';
    } 
 });
+nieuweTaakInput.classList.add('nieuwe-taak-input');
 
 
 
