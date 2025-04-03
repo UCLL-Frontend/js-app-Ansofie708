@@ -66,3 +66,24 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
     takenElementen.forEach(taakElement => taakElement.remove());
 
 }) 
+
+/*Nieuwe taak toevoegen met fat arrow*/
+const voegNieuweTaakToe = (titel) => {
+    const nieuweTaak = { titel: titel};
+    taken.push(nieuweTaak);
+    voegTaakObjectToe(nieuweTaak);
+};
+
+/*inputveld*/
+const nieuweTaakInput = document.createElement('input');
+nieuweTaakInput.type = 'text';
+nieuweTaakInput.placeholder = 'Nieuwe taak toevoegen';
+document.querySelector('section.Taken').before(nieuweTaakInput);
+
+/*eventlistener voor nieuwe taak*/
+nieuweTaakInput.addEventListener('keydown',(event) => {
+   if (event.code === 'Enter' && nieuweTaakInput.value.trim() !== '') {
+    voegNieuweTaakToe(nieuweTaakInput.value.trim());
+    nieuweTaakInput.value = '';
+   } 
+});
