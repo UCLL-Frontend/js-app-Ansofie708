@@ -1,5 +1,4 @@
 
-
 /* H1 aanpassen */
 document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
 
@@ -31,7 +30,7 @@ document.getElementById('geenTaken').remove();
 /* Functie om het aantal taken bij te werken */
 function updateAantalTaken() {
     const aantalTaken = taken.length;  
-    document.getElementById('aantalTaken').innerText = `Totaal aantal taken: ${aantalTaken}`;
+    document.getElementById('aantalTaken').innerText = `Totaal aantal Taken: ${aantalTaken}`;
 }
 
 
@@ -94,7 +93,7 @@ document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
 VerwijderAlleTakenKnop.addEventListener ('click', function() {
     const takenElementen = document.querySelectorAll('section.Taken article.taak');
     takenElementen.forEach(taakElement => taakElement.remove());
-    taken.length = 0;
+    taken.length= 0;
     updateAantalTaken();
 
 });
@@ -105,6 +104,7 @@ const voegNieuweTaakToe = (titel) => {
     const nieuweTaak = { titel: titel};
     taken.push(nieuweTaak);
     voegTaakObjectToe(nieuweTaak);
+    updateAantalTaken();
 };
 
 /*inputveld*/
@@ -118,7 +118,7 @@ nieuweTaakInput.addEventListener('keydown',(event) => {
    if (event.code === 'Enter' && nieuweTaakInput.value.trim() !== '') {
     voegNieuweTaakToe(nieuweTaakInput.value.trim());
     nieuweTaakInput.value = '';
-    updateAantalTaken();
+
    } 
 });
 nieuweTaakInput.classList.add('nieuwe-taak-input');
@@ -136,5 +136,4 @@ function verwijderTaak(taakElement, taak) {
     }
 }
 
-
-document.querySelector('#aantalTaken').innerText += taken.length;
+updateAantalTaken();
