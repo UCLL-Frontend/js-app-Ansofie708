@@ -129,6 +129,7 @@ function verwijderTaak(taakElement, taak) {
     if (index > -1) {
         taken.splice(index, 1);
         taakElement.remove();
+        updateAantalTaken();
     }
 }
 
