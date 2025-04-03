@@ -9,7 +9,7 @@ De To-Do applicatie stelt gebruikers in staat om taken te beheren. Waarbij het j
 *Taken bewerken
 *Taken verwijderen (individueel en alle taken tegelijk)
 *Automatische lijstupdate na het verwijderen van een taak
-
+*
 
 
 Bronnen
