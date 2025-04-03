@@ -1,20 +1,28 @@
 
-/* H1 aanpassen */
-document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
-
-
-
-/* array voor Taken*/
-const taken = [
+const standaardTaken = [
     { titel: 'Boodschappen doen' },
     { titel: 'Sporten' },
     { titel: 'Lezen' },
     { titel: 'Agenda bijwerken' },
     { titel: 'Auto wassen' },
-    { titel: 'Factuur betalen'},
-    {titel: 'Geld overmaken naar rekening'},
-    {titel: 'E-mail beantwoorden'}
+    { titel: 'Factuur betalen' },
+    { titel: 'Geld overmaken naar rekening' },
+    { titel: 'E-mail beantwoorden' }
 ];
+
+
+
+let taken = JSON.parse(localStorage.getItem('taken')) || []; 
+
+if (taken.length === 0) {
+    taken = [...standaardTaken];
+    localStorage.setItem('taken', JSON.stringify(taken)); 
+}
+
+/* H1 aanpassen */
+document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
+
+
 
 
 
@@ -91,6 +99,7 @@ function bewerkTaak(taakElement, taak) {
     if (nieuweTitel !== null && nieuweTitel.trim() !== '') {
         taak.titel = nieuweTitel.trim();
         taakElement.querySelector('h2').innerText = taak.titel;
+        localStorage.setItem('taken', JSON.stringify(taken));
     }
 }
 
@@ -119,6 +128,7 @@ function verwijderTaak(taakElement, taak) {
     if (index > -1) {
         taken.splice(index, 1);
         taakElement.remove();
+        localStorage.setItem('taken', JSON.stringify(taken));
         updateAantalTaken();
     }
 }

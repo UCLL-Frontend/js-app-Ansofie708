@@ -8,6 +8,15 @@ document.getElementById('addTaskButton').addEventListener('click', function () {
         const nieuweTaak = { titel: taakInput };
         taken.push(nieuweTaak);
         localStorage.setItem('taken', JSON.stringify(taken)); 
+        voegTaakObjectToe(nieuweTaak);
         document.getElementById('taakInput').value = ''; 
     }
 });
+
+function voegTaakObjectToe(taak) {
+    const taakArtikel = document.createElement('article');
+    taakArtikel.innerHTML = `<h2>${taak.titel}</h2>`;
+    taakArtikel.classList.add('taak');
+
+    document.querySelector('section.Taken').appendChild(taakArtikel);
+}
