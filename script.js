@@ -28,6 +28,16 @@ function voegTaakObjectToe(taak) {
     taakArtikel.classList.add('taak');
 
 
+/*verwijder knop per taak*/
+const deleteButton = document.createElement('button');
+deleteButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
+taakArtikel.appendChild(deleteButton);
+
+deleteButton.addEventListener('click', function(){
+    verwijderTaak(taakArtikel,taak);
+});
+
+document.querySelector('section.Taken').appendChild(taakArtikel);
     
 /* bewerkknop */
 const editButton = document.createElement('button');
@@ -39,21 +49,11 @@ editButton.addEventListener('click', function(){
     bewerkTaak(taakArtikel, taak);
 });
 
-
 document.querySelector('section.Taken').appendChild(taakArtikel);
 
 }
 
-/*verwijder knop*/
-const deleteButton = DocumentTimeline.createElement('button');
-deleteButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
-taak.Artikel.appendChild(deleteButton);
 
-deleteButton.addEventListener('click', function () {
-    verwijderTaak(taakArtikel,taak);
-});
-
-document.querySelector('section.Taken').appendChild(taakArtikel);
 
 /* Functie om taak te bewerken */
 function bewerkTaak(taakElement, taak) {
@@ -66,15 +66,7 @@ function bewerkTaak(taakElement, taak) {
 }
 
 
-/*verwijderen van taak*/
 
-function verwijderTaak(taakElement, taak) {
-    const index = taken.findIndex (t => t.titel === taak.titel);
-    if (index > -1) {
-        taken.splice(index,1);
-        taak.Element.remove();
-    } 
-}
 
 /* Event listener om taken te verwijderen*/
 const VerwijderAlleTakenKnop = document.createElement('button');
@@ -85,7 +77,8 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
     const takenElementen = document.querySelectorAll('section.Taken article.taak');
     takenElementen.forEach(taakElement => taakElement.remove());
 
-}) 
+});
+
 
 /*Nieuwe taak toevoegen met fat arrow*/
 const voegNieuweTaakToe = (titel) => {
@@ -108,3 +101,14 @@ nieuweTaakInput.addEventListener('keydown',(event) => {
    } 
 });
 
+
+
+/*verwijderen van taak*/
+
+function verwijderTaak(taakElement, taak) {
+    const index = taken.findIndex ((t) => t.titel === taak.titel);
+    if (index > -1) {
+        taken.splice(index, 1);
+        taakElement.remove();
+    }
+}
