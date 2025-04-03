@@ -3,4 +3,13 @@
 To Do List
 
 Beschrijving:
-De To-Do applicatie stelt gebruikers in staat om taken toe te voegen en te verwijderen. Wanneer er geen taken zijn, zal er een melding worden weergegeven. Daarnaast zal bij het verwijderen van een taak de lijst automatisch worden bijgewerkt.
+De To-Do applicatie stelt gebruikers in staat om taken te beheren. Waarbij het je instaat stelt om:
+
+*Taken toe te voegen met een beschrijving
+*Taken bewerken
+*Taken verwijderen (individueel en alle taken tegelijk)
+*Automatische lijstupdate na het verwijderen van een taak
+
+
+
+Bronnen

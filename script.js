@@ -1,20 +1,26 @@
+
+
 /* H1 aanpassen */
 document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
+
+
 
 /* array voor Taken*/
 const taken = [
     { titel: 'Boodschappen doen' },
     { titel: 'Sporten' },
     { titel: 'Lezen' },
-    { titel: 'Tuinieren' },
-    { titel: 'Auto wassen' }
+    { titel: 'Agenda bijwerken' },
+    { titel: 'Auto wassen' },
+    { titel: 'Factuur betalen'},
+    {titel: 'Geld overmaken naar rekening'},
+    {titel: 'E-mail beantwoorden'}
 ];
 
 /* Taken toevoegen */
 taken.forEach(taak => {
     voegTaakObjectToe(taak);
 });
-
 
 
 /*verwijderen van 'geenTaken*/
