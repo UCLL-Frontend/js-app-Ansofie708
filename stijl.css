@@ -9,11 +9,10 @@
 
 
 header{
-    background-color: #bc1919;
+    background-color: #f01d1dce;
     text-align: center;
     color: whitesmoke;
 }
-
 
 nav ul {
     display: flex;
@@ -24,10 +23,6 @@ nav ul {
   
 }
 
-nav ul li {
-    background-color: #bc1919;
-    
-}
 
 nav ul li a {
     text-decoration: none;
@@ -111,12 +106,12 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
+    background-color: #fe857a;
 }
 
 
 footer{
-    background-color: #bc1919;
+    background-color: #f01d1dce;
     padding: 1em;
     margin-top: auto;
   
