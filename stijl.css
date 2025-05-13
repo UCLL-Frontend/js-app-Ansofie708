@@ -6,7 +6,12 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
+.wrapper {
+    margin: auto;
+    margin-left: 20px;
+    justify-content: center;
+   
+}
 
 header{
     background-color: #f01d1dce;
