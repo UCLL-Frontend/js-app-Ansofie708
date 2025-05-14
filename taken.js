@@ -1,7 +1,7 @@
 export const standaardTaken = [
-    { titel: 'Boodschappen doen'},
-    { titel: 'Sporten'},
-    { titel: 'Lezen'},
+    {titel: 'Boodschappen doen'},
+    {titel: 'Sporten'},
+    {titel: 'Lezen'},
     {titel: 'Agenda bijwerken'},
     {titel: 'Auto wassen'},
     {titel: 'Factuur betalen'},

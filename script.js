@@ -4,12 +4,13 @@ import { standaardTaken } from "./taken.js";
 
 
 let taken = JSON.parse(localStorage.getItem('taken')) || []; 
-localStorage.setItem('taken', JSON.stringify(taken));
+
 
 if (taken.length === 0) {
     taken = [...standaardTaken];
     localStorage.setItem('taken', JSON.stringify(taken)); 
 }
+
 
 /* H1 aanpassen */
 document.querySelector('h1').innerText = 'Mijn To-Do Lijst';
@@ -24,8 +25,9 @@ taken.forEach(taak => {
 });
 
 
+updateAantalTaken();
 
-/*verwijderen van 'geenTaken*/
+/*verwijderen van geenTaken*/
 document.getElementById('geenTaken').remove();
 
 
@@ -124,5 +126,3 @@ function verwijderTaak(taakElement, taak) {
         updateAantalTaken();
     }
 }
-
-updateAantalTaken();
