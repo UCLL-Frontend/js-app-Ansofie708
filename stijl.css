@@ -62,7 +62,25 @@ label{
 
 }
 
+.bewerk-input {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    color: whitesmoke;
+    background-color: #fb6051 ;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
 input {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fb6051;
+    color: white;
     width: 300px;
     padding: 10px;
     margin-left: 2em;
@@ -71,6 +89,7 @@ input {
 
 
 .taak {
+   
     position: relative;
     color: whitesmoke;
     background-color: #fb6051 ;
@@ -83,6 +102,9 @@ input {
    
 }
 
+.taak-label {
+    color: white;
+}
 
 
 h2 {
@@ -95,16 +117,21 @@ ul.statistieken {
     margin-bottom: 2em;
 }
 
+
+
 button{
+color: white;
 cursor: pointer;
 padding: 0.5em;
 border-radius: 8px;
-background-color: whitesmoke;
+background-color: #fb6051;
 margin-top: 5px;
 font-weight: bold;
 
     
 }
+
+
 
 button i{
     font-size: 15px;
