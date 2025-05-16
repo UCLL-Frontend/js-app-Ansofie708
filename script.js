@@ -48,6 +48,7 @@ document.getElementById('addTaskButton').addEventListener('click', function() {
         voegTaakObjectToe(nieuweTaak);
         document.getElementById('taakInput').value = '';  
         updateAantalTaken();
+        localStorage.setItem('taken', JSON.stringify(taken));
     }
 });
 
@@ -55,8 +56,11 @@ document.getElementById('addTaskButton').addEventListener('click', function() {
 /*toevoegen taakobject*/
 function voegTaakObjectToe(taak) {
     const taakArtikel = document.createElement ('article');
-    taakArtikel.innerHTML = `<h2>${taak.titel}</h2>`;
     taakArtikel.classList.add('taak');
+
+    const titel = document.createElement('h2');
+    titel.innerText = taak.titel;
+    taakArtikel.appendChild(titel);
 
 
 /*verwijder knop per taak*/
@@ -64,11 +68,11 @@ const deleteButton = document.createElement('button');
 deleteButton.innerHTML= '<i class="fa-solid fa-trash"></i>';
 taakArtikel.appendChild(deleteButton);
 
-deleteButton.addEventListener('click', function(){
+deleteButton.addEventListener('click', function (){
     verwijderTaak(taakArtikel,taak);
 });
 
-document.querySelector('section.Taken').appendChild(taakArtikel);
+
     
 /* bewerkknop */
 const editButton = document.createElement('button');
@@ -88,29 +92,41 @@ document.querySelector('section.Taken').appendChild(taakArtikel);
 
 /* Functie om taak te bewerken */
 function bewerkTaak(taakElement, taak) {
-    const nieuweTitel = prompt('Bewerk taak', taak.titel);
+const titelElement = taakElement.querySelector('h2');
+const input = document.createElement('input');
+input.type ='text';
+input.value = taak.titel;
+input.classList.add('bewerk-input');
 
-    if (nieuweTitel !== null && nieuweTitel.trim() !== '') {
-        taak.titel = nieuweTitel.trim();
-        taakElement.querySelector('h2').innerText = taak.titel;
+/* huidige h2-element wordt inputveld*/
+taakElement.replaceChild(input, titelElement);
+input.focus();
+
+function opslaan() {
+    const nieuweTitel = input.value.trim();
+    if (nieuweTitel !== '') {
+        taak.titel = nieuweTitel;
+
+        const nieuweTitelElement = document.createElement('h2');
+        nieuweTitelElement.innerText = nieuweTitel;
+        taakElement.replaceChild(nieuweTitelElement, input);
+
+        /*localstorage*/
         localStorage.setItem('taken', JSON.stringify(taken));
+    } else /*indien lege input niets wijzigen*/ {
+        taakElement.replaceChild(titelElement, input);
     }
 }
 
-
-
-/* Event listener om taken te verwijderen*/
-const VerwijderAlleTakenKnop = document.createElement('button');
-VerwijderAlleTakenKnop.innerText = 'Verwijder alle taken';
-document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
-
-VerwijderAlleTakenKnop.addEventListener ('click', function() {
-    const takenElementen = document.querySelectorAll('section.Taken article.taak');
-    takenElementen.forEach(taakElement => taakElement.remove());
-    taken.length= 0;
-    updateAantalTaken();
-
+/* opslaan enter*/
+input.addEventListener ('keypress', function (e) {
+    if (e.key === 'Enter') {
+        opslaan();
+    }
 });
+}
+
+
 
 
 
@@ -126,3 +142,23 @@ function verwijderTaak(taakElement, taak) {
         updateAantalTaken();
     }
 }
+
+
+
+
+
+/* Event listener om taken te verwijderen*/
+const VerwijderAlleTakenKnop = document.createElement('button');
+VerwijderAlleTakenKnop.innerText = 'Verwijder alle taken';
+document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
+
+VerwijderAlleTakenKnop.addEventListener ('click', function() {
+    const takenElementen = document.querySelectorAll('section.Taken article.taak');
+    takenElementen.forEach(taakElement => taakElement.remove());
+    taken.length= 0;
+    localStorage.setItem('taken', JSON.stringify(taken));
+    updateAantalTaken();
+
+});
+
+
