@@ -79,12 +79,15 @@ label{
 input {
     font-size: 16px;
     font-weight: bold;
-    background-color: #fb6051;
-    color: white;
-    width: 300px;
-    padding: 10px;
-    margin-left: 2em;
+    position: relative;
+    color: whitesmoke;
+    background-color: #fb6051 ;
+    padding: 1em;
     border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-left: 2em;
 }
 
 
@@ -104,6 +107,7 @@ input {
 
 .taak-label {
     color: white;
+    font-size: large;
 }
 
 
