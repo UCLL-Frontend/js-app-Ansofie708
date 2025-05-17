@@ -26,6 +26,7 @@ taken.forEach(taak => {
 
 
 updateAantalTaken();
+updatePrioriteitStatistieken();
 
 /*verwijderen van geenTaken*/
 document.getElementById('geenTaken').remove();
@@ -37,20 +38,23 @@ function updateAantalTaken() {
     document.getElementById('aantalTaken').innerText = `Totaal aantal Taken: ${aantalTaken}`;
 }
 
+/* Functie prioriteit statistieken*/
+function updatePrioriteitStatistieken () {
+    const stats = { laag: 0, middel: 0, hoog: 0};
 
-/* taak toevoegen*/
-document.getElementById('addTaskButton').addEventListener('click', function() {
-    const taakInput = document.getElementById('taakInput').value.trim();
-
-    if (taakInput !== '') {
-        const nieuweTaak = { titel: taakInput };
-        taken.push(nieuweTaak);
-        voegTaakObjectToe(nieuweTaak);
-        document.getElementById('taakInput').value = '';  
-        updateAantalTaken();
-        localStorage.setItem('taken', JSON.stringify(taken));
+taken.forEach((taak) => {
+    if (taak.prioriteit && stats.hasOwnProperty(taak.prioriteit)) {
+        stats[taak.prioriteit]++;
     }
 });
+
+
+document.getElementById('prioriteitLaag').innerText= `Laag: ${stats.laag}`;
+document.getElementById('prioriteitMiddel').innerText= `Middel: ${stats.middel}`;
+document.getElementById('prioriteitHoog').innerText= `Hoog: ${stats.hoog}`;
+
+}
+
 
 
 /*toevoegen taakobject*/
@@ -61,6 +65,11 @@ function voegTaakObjectToe(taak) {
     const titel = document.createElement('h2');
     titel.innerText = taak.titel;
     taakArtikel.appendChild(titel);
+
+    const prioriteitSpan = document.createElement('span');
+    prioriteitSpan.innerText= `prioriteit: ${taak.prioriteit}`;
+    prioriteitSpan.classList.add('prioriteit-label');
+    taakArtikel.appendChild(prioriteitSpan);
 
 
 /*verwijder knop per taak*/
@@ -140,6 +149,7 @@ function verwijderTaak(taakElement, taak) {
         taakElement.remove();
         localStorage.setItem('taken', JSON.stringify(taken));
         updateAantalTaken();
+        updatePrioriteitStatistieken();
     }
 }
 
@@ -158,6 +168,7 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
     taken.length= 0;
     localStorage.setItem('taken', JSON.stringify(taken));
     updateAantalTaken();
+    updatePrioriteitStatistieken();
 
 });
 
