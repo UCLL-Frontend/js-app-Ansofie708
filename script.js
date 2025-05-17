@@ -170,6 +170,8 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
     updateAantalTaken();
     updatePrioriteitStatistieken();
 
+    VerwijderAlleTakenKnop.remove();
+
 });
 
 
