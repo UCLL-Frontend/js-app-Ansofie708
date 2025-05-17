@@ -102,28 +102,54 @@ document.querySelector('section.Taken').appendChild(taakArtikel);
 /* Functie om taak te bewerken */
 function bewerkTaak(taakElement, taak) {
 const titelElement = taakElement.querySelector('h2');
-const input = document.createElement('input');
-input.type ='text';
-input.value = taak.titel;
-input.classList.add('bewerk-input');
+const prioriteitElement = taakElement.querySelector('.prioriteit-label');
+const inputTitel = document.createElement('input');
+inputTitel.type ='text';
+inputTitel.value = taak.titel;
+inputTitel.classList.add('bewerk-input');
+
+const selectPrioriteit = document.createElement('select');
+['laag', 'middel', 'hoog'].forEach(prioriteit => {
+    const optie = document.createElement('option');
+    optie.value= prioriteit;
+    optie.innerText= prioriteit.charAt(0).toUpperCase()+ prioriteit.slice(1);
+    if (taak.prioriteit === prioriteit) {
+        optie.selected = true;
+    }
+
+selectPrioriteit.appendChild(optie);
+});
 
 /* huidige h2-element wordt inputveld*/
-taakElement.replaceChild(input, titelElement);
-input.focus();
+taakElement.replaceChild(inputTitel, titelElement);
+taakElement.replaceChild(selectPrioriteit, prioriteitElement);
+inputTitel.focus();
 
 function opslaan() {
-    const nieuweTitel = input.value.trim();
+    const nieuweTitel = inputTitel.value.trim();
+    const nieuwePrioriteit = selectPrioriteit.value;
+
     if (nieuweTitel !== '') {
         taak.titel = nieuweTitel;
+        taak.prioriteit = nieuwePrioriteit
 
         const nieuweTitelElement = document.createElement('h2');
         nieuweTitelElement.innerText = nieuweTitel;
+        
+        const nieuwePrioriteitSpan = document.createElement('span');
+        nieuwePrioriteitSpan.innerText = `prioriteit: ${nieuwePrioriteit}`;
+        nieuwePrioriteitSpan.classList.add('prioriteit-label');
+
+
         taakElement.replaceChild(nieuweTitelElement, input);
+        taakElement.replaceChild(nieuwePrioriteitSpan, selectPrioriteit);
 
         /*localstorage*/
         localStorage.setItem('taken', JSON.stringify(taken));
+        updatePrioriteitStatistieken();
     } else /*indien lege input niets wijzigen*/ {
-        taakElement.replaceChild(titelElement, input);
+        taakElement.replaceChild(titelElement, inputTitel);
+        taakElement.replaceChild(prioriteitElement, selectPrioriteit);
     }
 }
 
@@ -133,7 +159,12 @@ input.addEventListener ('keypress', function (e) {
         opslaan();
     }
 });
-}
+
+selectPrioriteit.addEventListener('change', function() {
+   
+        opslaan();
+    })
+};
 
 
 

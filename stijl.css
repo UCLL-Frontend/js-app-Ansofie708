@@ -85,7 +85,6 @@ input {
     color: white;
     background-color: #fb6051 ;
     padding: 0.8em;
-    width: 100%;
     border-radius: 8px;
      margin-bottom: 1em;
     margin-top: 1em;
@@ -112,6 +111,7 @@ input {
 .taak-label {
     color: white;
     font-size: large;
+  
 }
 
 
@@ -154,6 +154,7 @@ button i{
 
 .prioriteit {
     color: white;
+   
 
 }
 
