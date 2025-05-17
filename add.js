@@ -17,7 +17,7 @@ document.getElementById('addTaskButton').addEventListener('click', function () {
       
 
        taakInputElement.value = '';
-       meldingElement.textContent = 'Taak toegevoegd!';
+       meldingElement.textContent = 'Taak  is met succes toegevoegd!';
     } else {
        meldingElement.textContent = 'Er is geen taak ingevoerd.'
     }

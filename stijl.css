@@ -143,6 +143,12 @@ button i{
     color: black;
 }
 
+.melding {
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+   
+}
 
 body{
     min-height: 100vh;
