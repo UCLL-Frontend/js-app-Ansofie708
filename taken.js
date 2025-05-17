@@ -1,10 +1,12 @@
 export const standaardTaken = [
-    {titel: 'Boodschappen doen'},
-    {titel: 'Sporten'},
-    {titel: 'Lezen'},
-    {titel: 'Agenda bijwerken'},
-    {titel: 'Auto wassen'},
-    {titel: 'Factuur betalen'},
-    {titel: 'Geld overmaken naar rekening'},
-    {titel: 'E-mail beantwoorden'}
+    {titel: 'Project afronden', prioriteit: 'hoog'},
+    {titel: 'Boodschappen doen', prioriteit: 'middel'},
+    {titel: 'Sporten', prioriteit: 'hoog'},
+    {titel: 'Lezen', prioriteit: 'laag'},
+    {titel: 'Agenda bijwerken', prioriteit: 'middel'},
+    {titel: 'Auto wassen', prioriteit: 'laag'},
+    {titel: 'Factuur betalen', prioriteit: 'hoog'},
+    {titel: 'Geld overmaken naar rekening', prioriteit: 'hoog'},
+    {titel: 'E-mail beantwoorden', prioriteit: 'hoog'},
+    {titel: 'Kamer opruimen', prioriteit: 'middel'}
 ];
