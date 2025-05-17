@@ -1,7 +1,9 @@
 
 
 document.getElementById('addTaskButton').addEventListener('click', function () {
-    const taakInput = document.getElementById('taakInput').value.trim();
+    const taakInputElement = document.getElementById('taakInput');
+   const taakInput = taakInputElement.value.trim();
+   const meldingElement = document.getElementById('melding');
 
     if (taakInput !== '') {
         let taken = JSON.parse(localStorage.getItem('taken')) || [];
@@ -9,6 +11,15 @@ document.getElementById('addTaskButton').addEventListener('click', function () {
         taken.push(nieuweTaak);
         localStorage.setItem('taken', JSON.stringify(taken)); 
          document.getElementById('taakInput').value = ''; 
+    
+
+
+      
+
+       taakInputElement.value = '';
+       meldingElement.textContent = 'Taak toegevoegd!';
+    } else {
+       meldingElement.textContent = 'Er is geen taak ingevoerd.'
     }
 });
 
