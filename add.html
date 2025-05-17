@@ -25,13 +25,15 @@
         <label for="taakInput" class="taak-label">Nieuwe taak:</label>
         <input type="text" id="taakInput" placeholder="Voer een taak in...">
 
-        <label for="prioriteitInput" class="prioriteit-label">prioriteit:</label>
+        <div class="prioriteit">
+        <label for="prioriteitInput" >Kies prioriteit:</label>
        <select id="prioriteitInput">
         <option value="laag">Laag</option>
         <option value="middel">Middel</option>
         <option value="hoog">Hoog</option>
        </select>
-       
+    </div>
+    
         <button id="addTaskButton"> toevoegen</button>
         <p id="melding" class="melding"></p>
         <section class="Taken"></section>

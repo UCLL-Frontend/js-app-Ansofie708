@@ -18,7 +18,7 @@
 header{
     background-color: #f01d1dce;
     text-align: center;
-    color: whitesmoke;
+    color: white;
 }
 
 nav ul {
@@ -58,34 +58,36 @@ label{
    margin-left: 2em;
    font-size: 16px;
    font-weight: bold;
-
-
+   
 }
 
+
+
 .bewerk-input {
-    font-size: 16px;
+    
     font-weight: bold;
     position: relative;
-    color: whitesmoke;
+    color: white;
     background-color: #fb6051 ;
     padding: 1em;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    width: auto;
     margin-bottom: 1em;
     margin-top: 1em;
     margin-left: 2em;
 }
 
 input {
+    
     font-size: 16px;
     font-weight: bold;
     position: relative;
-    color: whitesmoke;
+    color: white;
     background-color: #fb6051 ;
-    padding: 1em;
+    padding: 0.8em;
+    width: 100%;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 1em;
+     margin-bottom: 1em;
     margin-top: 1em;
     margin-left: 2em;
 }
@@ -94,16 +96,18 @@ input {
 .taak {
    
     position: relative;
-    color: whitesmoke;
+    color: white;
     background-color: #fb6051 ;
     padding: 1em;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    
     margin-bottom: 1em;
     margin-top: 1em;
     margin-left: 2em;
    
 }
+
+
 
 .taak-label {
     color: white;
@@ -113,35 +117,32 @@ input {
 
 
 h2 {
+    color: white;
     margin-left: 1em;
+    margin-top: 30px;
 }
 
+
 ul.statistieken {
+    color: white;
     list-style-type: none;
     margin-left: 2em;
+    margin-top: 20px;
     margin-bottom: 2em;
 }
 
 
-
-button{
-color: white;
-cursor: pointer;
-padding: 0.5em;
-border-radius: 8px;
-background-color: #fb6051;
-margin-top: 5px;
-font-weight: bold;
-
-    
-}
+   
 
 
 
 button i{
     font-size: 15px;
     color: black;
+    
 }
+
+
 
 .melding {
     color: white;
@@ -149,6 +150,40 @@ button i{
     font-weight: bold;
    
 }
+
+
+.prioriteit {
+    color: white;
+
+}
+
+.prioriteit select {
+    background-color: #fb6051;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    padding: 0.5 em;
+    font-size: 1em;
+    font-weight: bold;
+    width: 30%;
+    margin-left: 50px;
+}
+
+button{
+    color: white;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 8px;
+    background-color: #fb6051;
+    margin-top: 20px;
+     margin-left: auto;
+     margin-right: 0;
+     display: block;
+    font-weight: bold;
+    
+        
+    }
+
 
 body{
     min-height: 100vh;
