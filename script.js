@@ -141,7 +141,7 @@ function opslaan() {
         nieuwePrioriteitSpan.classList.add('prioriteit-label');
 
 
-        taakElement.replaceChild(nieuweTitelElement, input);
+        taakElement.replaceChild(nieuweTitelElement, inputTitel);
         taakElement.replaceChild(nieuwePrioriteitSpan, selectPrioriteit);
 
         /*localstorage*/
@@ -154,7 +154,7 @@ function opslaan() {
 }
 
 /* opslaan enter*/
-input.addEventListener ('keypress', function (e) {
+inputTitel.addEventListener ('keypress', function (e) {
     if (e.key === 'Enter') {
         opslaan();
     }
