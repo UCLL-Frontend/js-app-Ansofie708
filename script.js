@@ -27,9 +27,9 @@ taken.forEach(taak => {
 
 updateAantalTaken();
 updatePrioriteitStatistieken();
+updateGeenTakenMelding();
 
-/*verwijderen van geenTaken*/
-document.getElementById('geenTaken').remove();
+
 
 
 /* Functie om het aantal taken bij te werken */
@@ -55,7 +55,16 @@ document.getElementById('prioriteitHoog').innerText= `Hoog: ${stats.hoog}`;
 
 }
 
+/*functie om 'geen taken' melding te tonen*/
+function updateGeenTakenMelding() {
+    const geenTakenElement = document.getElementById('geenTaken');
+    if (taken.length ===0 ) {
+        geenTakenElement.style.display = 'block';
 
+    } else {
+        geenTakenElement.style.display = 'none';
+    }
+}
 
 /*toevoegen taakobject*/
 function voegTaakObjectToe(taak) {
@@ -188,7 +197,7 @@ function verwijderTaak(taakElement, taak) {
 
 
 
-/* Event listener om taken te verwijderen*/
+/* Event listener om alle taken te verwijderen*/
 const VerwijderAlleTakenKnop = document.createElement('button');
 VerwijderAlleTakenKnop.innerText = 'Verwijder alle taken';
 document.querySelector('section.Taken').before(VerwijderAlleTakenKnop);
@@ -200,6 +209,13 @@ VerwijderAlleTakenKnop.addEventListener ('click', function() {
     localStorage.setItem('taken', JSON.stringify(taken));
     updateAantalTaken();
     updatePrioriteitStatistieken();
+    updateGeenTakenMelding();
+
+    /* 'mijn taken' verwijderen*/
+    const takenHeader = document.querySelector('section.Taken > h2');
+    if (takenHeader) {
+        takenHeader.remove();
+    }
 
     VerwijderAlleTakenKnop.remove();
 
