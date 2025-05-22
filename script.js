@@ -121,7 +121,7 @@ const selectPrioriteit = document.createElement('select');
 ['laag', 'middel', 'hoog'].forEach(prioriteit => {
     const optie = document.createElement('option');
     optie.value= prioriteit;
-    optie.innerText= prioriteit.charAt(0).toUpperCase()+ prioriteit.slice(1);
+    optie.innerText= prioriteit; 
     if (taak.prioriteit === prioriteit) {
         optie.selected = true;
     }
