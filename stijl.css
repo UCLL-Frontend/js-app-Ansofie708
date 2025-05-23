@@ -41,7 +41,7 @@ nav ul li a {
     display: block;
     padding: 1em;
     border-radius: 8px;
-    transition: backgroundColor 0.5 ease-in-out;
+  
 }
 
  nav ul li a:hover {
