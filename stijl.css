@@ -21,7 +21,6 @@ header{
 nav ul {
     display: flex;
     gap: 1em;
-    flex-direction: row;
     list-style-type: none;
     justify-content: flex-end;
   
